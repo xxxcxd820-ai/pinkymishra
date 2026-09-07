@@ -601,7 +601,7 @@ const Hero = () => {
             href="#projects"
             className="hover:text-red-500 transition-colors"
           >
-            Experience
+            Projects & Experience
           </a>
 
           <a
