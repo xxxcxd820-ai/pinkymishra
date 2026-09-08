@@ -2,116 +2,126 @@ import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-import picture from "../assets/Portfolio/picture.png";
-import kashmirBox from "../assets/Portfolio/kashmirBox.jpeg";
-import gauiLifestyle from "../assets/Portfolio/Gausilifestyle.jpeg";
-import milltex from "../assets/Portfolio/Milltex.jpeg";
-import narayana from "../assets/Portfolio/narayana.png";
-import birdeye from "../assets/Portfolio/birdeye.jpeg";
-import isano from "../assets/Portfolio/Isano.jpeg";
-import nlearn from "../assets/Portfolio/nlearn.png";
-import juspay from "../assets/Portfolio/juspay.png";
+// ============================================================
+// DESIGN WORK IMAGES
+// ============================================================
+
+import walnutKernels from "../assets/Portfolio/walnut-kernels.png";
+import hibiscusRoseTea from "../assets/Portfolio/hibiscus-rose-tea.png";
+import himalayanShilajit from "../assets/Portfolio/himalayan-shilajit.png";
+import kashmiriKagziBadaam from "../assets/Portfolio/kashmiri-kagzi-badaam.png";
+import acaciaHoney from "../assets/Portfolio/acacia-honey.png";
+import applePlumTea from "../assets/Portfolio/apple-plum-tea.png";
+
 gsap.registerPlugin(ScrollTrigger);
 
 // ============================================================
-// PROJECT DATA
+// DESIGN WORK DATA
 // ============================================================
 
-const projectsData = [
+const designWorks = [
   {
-    title: "Kashmir Box",
-    category: "E-Commerce Management",
+    number: "01",
+    title: "Kashmiri Kagzi Badaam",
+    subtitle: "Premium Product Campaign",
+    category: "Food & Wellness",
     description:
-      "Managed marketplace P&L across Myntra and Nykaa, onboarded Flipkart and Walmart, and drove ₹1.73 Cr GMV across 9,199 fulfilled orders.",
-    tags: ["Shopify", "Myntra", "Nykaa", "Flipkart"],
-    match: "99%",
-    episode: "01",
-    imageUrl: kashmirBox,
+      "A premium visual campaign created around Kashmiri Kagzi Badaam, combining natural textures, elegant typography and a warm luxury palette to communicate purity, nutrition and premium quality.",
+    tags: [
+      "Product Design",
+      "Packaging",
+      "Art Direction",
+      "Food Branding",
+    ],
+    image: hibiscusRoseTea,
   },
 
   {
-    title: "Bird Eye India",
-    category: "E-Commerce Operations",
+    number: "02",
+    title: "Premium Walnut Kernels",
+    subtitle: "Kashmir Origin Campaign",
+    category: "Food & Wellness",
     description:
-      "Scaled e-commerce operations from 100 to 450+ daily orders within six months while maintaining operational efficiency and reducing costs by 15%.",
-    tags: ["Shopify", "Amazon", "E-Commerce", "Operations"],
-    match: "98%",
-    episode: "02",
-    imageUrl: birdeye,
+      "An editorial product composition highlighting premium Kashmiri walnut kernels with a natural green and earthy visual system designed to communicate authenticity, freshness and origin.",
+    tags: [
+      "Product Campaign",
+      "Visual Design",
+      "Branding",
+      "Art Direction",
+    ],
+    image: walnutKernels,
   },
 
   {
-    title: "Gaui Lifestyle",
-    category: "E-Commerce Consulting",
+    number: "03",
+    title: "Hibiscus Rose Tea",
+    subtitle: "Wellness Product Story",
+    category: "Tea & Wellness",
     description:
-      "Optimized digital campaigns across Amazon, Flipkart and Meesho, achieving 287% ROAS while implementing AI-powered product recommendations and upselling strategies.",
-    tags: ["Amazon Ads", "Flipkart Ads", "Meesho", "AI"],
-    match: "97%",
-    episode: "03",
-    imageUrl: gauiLifestyle,
+      "A soft lifestyle-focused product design that combines botanical photography, handwritten details and warm pink accents to create a feminine and wellness-oriented visual identity.",
+    tags: [
+      "Lifestyle Design",
+      "Product Visual",
+      "Wellness",
+      "Creative Direction",
+    ],
+    image: himalayanShilajit,
   },
 
   {
-    title: "Milltex.co / Bell Rangers / Lotus Mills",
-    category: "E-Commerce Consulting",
+    number: "04",
+    title: "Original Acacia Honey",
+    subtitle: "Golden Purity",
+    category: "Natural Products",
     description:
-      "Directed multi-marketplace product listings across 5+ platforms, optimized 500+ SKUs, and introduced demand forecasting with 85% accuracy.",
-    tags: ["E-Commerce", "Marketplaces", "Inventory", "AI"],
-    match: "96%",
-    episode: "04",
-    imageUrl: milltex,
+      "A premium honey campaign built around warm golden tones, natural textures and cinematic product photography to create a sophisticated natural-luxury presentation.",
+    tags: [
+      "Product Photography",
+      "Campaign Design",
+      "Luxury Branding",
+      "Art Direction",
+    ],
+    image: kashmiriKagziBadaam,
   },
 
   {
-    title: "The Narayana Group",
-    category: "Digital Transformation",
+    number: "05",
+    title: "Dried Apple & Plum Tea",
+    subtitle: "Warmth & Wellness",
+    category: "Tea Collection",
     description:
-      "Led digital transformation initiatives including e-commerce optimization, cross-selling strategies, chatbot-assisted checkout, and digital marketing for education products.",
-    tags: ["Digital Transformation", "E-Commerce", "Chatbots"],
-    match: "98%",
-    episode: "05",
-    imageUrl: narayana,
+      "A cozy lifestyle campaign combining product storytelling, warm interiors and natural ingredients to create an inviting visual experience around the tea ritual.",
+    tags: [
+      "Lifestyle Campaign",
+      "Product Design",
+      "Storytelling",
+      "Creative Direction",
+    ],
+    image: acaciaHoney,
   },
 
   {
-    title: "ISANO Connect",
-    category: "Travel & Concierge Operations",
+    number: "06",
+    title: "Himalayan Shilajit",
+    subtitle: "Sourced From The Himalayas",
+    category: "Ayurvedic Wellness",
     description:
-      "Improved operational efficiency by 90 minutes per client through HubSpot and Zapier automation, enabling the team to serve three times more clients per working hour.",
-    tags: ["HubSpot", "Zapier", "Automation", "Operations"],
-    match: "97%",
-    episode: "06",
-    imageUrl: isano,
-  },
-
-  {
-    title: "nLearn LMS Platform",
-    category: "EdTech & Digital Transformation",
-    description:
-      "Led a digital transformation initiative resulting in the launch of the nLearn LMS platform, reaching 15,000+ student registrations and ₹25 Lakhs in parent-purchased subscriptions within the first month.",
-    tags: ["LMS", "EdTech", "Analytics", "Salesforce"],
-    match: "99%",
-    episode: "07",
-    imageUrl: nlearn  ,
-  },
-
-  {
-    title: "Juspay Payment Gateway Integration",
-    category: "Digital Payments",
-    description:
-      "Implemented Juspay digital payment gateway integration supporting 4,000+ transactions daily with a 99.7% transaction success rate.",
-    tags: ["Juspay", "Transactions", "E-Commerce", "Analytics"],
-    match: "100%",
-    episode: "08",
-    imageUrl: juspay,
+      "A strong heritage-inspired visual direction using Himalayan landscapes, earthy materials and bold typography to position the product as authentic, natural and premium.",
+    tags: [
+      "Wellness Branding",
+      "Product Campaign",
+      "Packaging",
+      "Visual Direction",
+    ],
+    image: applePlumTea,
   },
 ];
 
 // ============================================================
-// PROJECTS
+// DESIGN WORKS
 // ============================================================
 
-const Projects = () => {
+const DesignWorks = () => {
   const sectionRef = useRef(null);
   const cardsRef = useRef([]);
 
@@ -119,18 +129,22 @@ const Projects = () => {
     const ctx = gsap.context(() => {
       const cards = cardsRef.current.filter(Boolean);
 
+      // --------------------------------------------------------
+      // CARD ENTRANCE
+      // --------------------------------------------------------
+
       gsap.set(cards, {
         opacity: 0,
         y: 70,
-        scale: 0.96,
+        scale: 0.97,
       });
 
       gsap.to(cards, {
         opacity: 1,
         y: 0,
         scale: 1,
-        duration: 0.9,
-        stagger: 0.1,
+        duration: 1,
+        stagger: 0.12,
         ease: "power3.out",
 
         scrollTrigger: {
@@ -141,22 +155,23 @@ const Projects = () => {
       });
 
       // --------------------------------------------------------
-      // DESKTOP IMAGE PARALLAX
+      // IMAGE PARALLAX
       // --------------------------------------------------------
 
       cards.forEach((card) => {
-        const image = card.querySelector(".project-image");
+        const image = card.querySelector(".design-image");
 
         if (!image) return;
 
         gsap.fromTo(
           image,
           {
-            scale: 1.08,
+            scale: 1.1,
           },
           {
             scale: 1,
             ease: "none",
+
             scrollTrigger: {
               trigger: card,
               start: "top bottom",
@@ -166,6 +181,17 @@ const Projects = () => {
           }
         );
       });
+
+      // --------------------------------------------------------
+      // DECORATIVE BACKGROUND
+      // --------------------------------------------------------
+
+      gsap.to(".design-orbit", {
+        rotation: 360,
+        duration: 40,
+        repeat: -1,
+        ease: "none",
+      });
     }, sectionRef);
 
     return () => ctx.revert();
@@ -174,23 +200,28 @@ const Projects = () => {
   return (
     <section
       ref={sectionRef}
-      id="projects"
+      id="design-works"
       className="
         relative
         w-full
         min-h-screen
 
+        overflow-hidden
+
         bg-[#0b0b0b]
         text-white
 
-        py-24
-        md:py-36
+        pt-10
+        md:pt-16
+        lg:pt-20
 
-        overflow-hidden
+        pb-24
+        md:pb-32
+        lg:pb-40
       "
     >
       {/* ======================================================
-          BACKGROUND ELEMENTS
+          BACKGROUND
       ====================================================== */}
 
       <div
@@ -201,41 +232,60 @@ const Projects = () => {
           overflow-hidden
         "
       >
-        {/* Large background text */}
+        {/* Large background typography */}
 
         <div
           className="
             absolute
-            top-10
+            top-[30px]
             left-1/2
-
             -translate-x-1/2
 
-            text-[25vw]
-            md:text-[20vw]
+            text-[28vw]
+            md:text-[21vw]
 
             font-black
 
-            tracking-[-0.08em]
-
-            text-white/[0.025]
+            tracking-[-0.1em]
 
             leading-none
 
             whitespace-nowrap
+
+            text-white/[0.025]
           "
         >
-          WORK
+          DESIGN
         </div>
 
-        {/* Red glow */}
+        {/* Dark red glow */}
 
         <div
           className="
             absolute
 
-            top-[15%]
-            right-[-15%]
+            top-[8%]
+            right-[-12%]
+
+            w-[480px]
+            h-[480px]
+
+            rounded-full
+
+            bg-red-600/[0.045]
+
+            blur-[130px]
+          "
+        />
+
+        {/* Second dark red glow */}
+
+        <div
+          className="
+            absolute
+
+            bottom-[10%]
+            left-[-12%]
 
             w-[450px]
             h-[450px]
@@ -244,31 +294,39 @@ const Projects = () => {
 
             bg-red-600/[0.035]
 
-            blur-[120px]
+            blur-[130px]
           "
         />
 
+        {/* Decorative circle */}
+
         <div
           className="
+            design-orbit
+
             absolute
 
-            bottom-[10%]
-            left-[-15%]
+            top-[22%]
+            right-[4%]
 
-            w-[400px]
-            h-[400px]
+            hidden
+            lg:block
+
+            w-[230px]
+            h-[230px]
 
             rounded-full
 
-            bg-red-600/[0.025]
+            border
+            border-red-600/[0.12]
 
-            blur-[120px]
+            border-dashed
           "
         />
       </div>
 
       {/* ======================================================
-          CONTAINER
+          MAIN CONTAINER
       ====================================================== */}
 
       <div
@@ -288,7 +346,7 @@ const Projects = () => {
         "
       >
         {/* ====================================================
-            SECTION HEADER
+            HEADER
         ==================================================== */}
 
         <div
@@ -341,11 +399,11 @@ const Projects = () => {
                   text-red-500
                 "
               >
-                Selected Work
+                Selected Design Work
               </span>
             </div>
 
-            {/* Heading */}
+            {/* Main heading */}
 
             <h2
               className="
@@ -363,7 +421,7 @@ const Projects = () => {
                 text-white
               "
             >
-              PROJECTS<span className="text-red-600">.</span>
+              DESIGN<span className="text-red-600">.</span>
             </h2>
 
             <p
@@ -382,13 +440,13 @@ const Projects = () => {
                 font-light
               "
             >
-              A selection of e-commerce, digital transformation,
-              automation and technology projects delivered across
-              different industries.
+              A collection of premium product visuals, packaging
+              concepts and lifestyle campaigns created around
+              natural products, wellness and Kashmiri heritage.
             </p>
           </div>
 
-          {/* Project counter */}
+          {/* Counter */}
 
           <div
             className="
@@ -414,7 +472,7 @@ const Projects = () => {
                 text-white
               "
             >
-              08
+              06
             </span>
 
             <div
@@ -436,13 +494,13 @@ const Projects = () => {
             >
               Selected
               <br />
-              Projects
+              Works
             </div>
           </div>
         </div>
 
         {/* ====================================================
-            PROJECT GRID
+            DESKTOP GRID
         ==================================================== */}
 
         <div
@@ -460,10 +518,10 @@ const Projects = () => {
             lg:gap-y-12
           "
         >
-          {projectsData.map((project, index) => (
-            <ProjectCard
-              key={project.episode}
-              project={project}
+          {designWorks.map((work, index) => (
+            <DesignCard
+              key={work.number}
+              work={work}
               index={index}
               cardsRef={cardsRef}
             />
@@ -480,8 +538,6 @@ const Projects = () => {
 
             -mx-5
 
-            overflow-x-auto
-
             flex
 
             gap-5
@@ -489,6 +545,8 @@ const Projects = () => {
             px-5
 
             pb-8
+
+            overflow-x-auto
 
             snap-x
             snap-mandatory
@@ -500,9 +558,9 @@ const Projects = () => {
             msOverflowStyle: "none",
           }}
         >
-          {projectsData.map((project, index) => (
+          {designWorks.map((work, index) => (
             <div
-              key={`mobile-${project.episode}`}
+              key={`mobile-${work.number}`}
               className="
                 shrink-0
 
@@ -512,8 +570,8 @@ const Projects = () => {
                 snap-center
               "
             >
-              <ProjectCard
-                project={project}
+              <DesignCard
+                work={work}
                 index={index}
                 cardsRef={cardsRef}
                 mobile
@@ -523,7 +581,7 @@ const Projects = () => {
         </div>
 
         {/* ====================================================
-            MOBILE SWIPE TEXT
+            MOBILE SWIPE
         ==================================================== */}
 
         <div
@@ -571,11 +629,11 @@ const Projects = () => {
 };
 
 // ============================================================
-// PROJECT CARD
+// DESIGN CARD
 // ============================================================
 
-const ProjectCard = ({
-  project,
+const DesignCard = ({
+  work,
   index,
   cardsRef,
   mobile = false,
@@ -602,9 +660,9 @@ const ProjectCard = ({
         transition-all
         duration-500
 
-        hover:border-red-600/50
-
         hover:-translate-y-2
+
+        hover:border-red-600/50
 
         ${
           mobile
@@ -616,7 +674,7 @@ const ProjectCard = ({
       `}
     >
       {/* ====================================================
-          IMAGE
+          IMAGE AREA
       ==================================================== */}
 
       <div
@@ -636,118 +694,63 @@ const ProjectCard = ({
           }
         `}
       >
-        {project.imageUrl ? (
-          <>
-            <img
-              src={project.imageUrl}
-              alt={project.title}
-              className="
-                project-image
+        <img
+          src={work.image}
+          alt={work.title}
+          className="
+            design-image
 
-                absolute
-                inset-0
+            absolute
+            inset-0
 
-                w-full
-                h-full
+            w-full
+            h-full
 
-                object-cover
+            object-cover
 
-                transition-transform
-                duration-[1200ms]
-                ease-out
+            transition-transform
+            duration-[1200ms]
+            ease-out
 
-                group-hover:scale-[1.07]
-              "
-              loading="lazy"
-            />
+            group-hover:scale-[1.07]
+          "
+          loading="lazy"
+        />
 
-            {/* Image darkening */}
+        {/* Image darkening */}
 
-            <div
-              className="
-                absolute
-                inset-0
+        <div
+          className="
+            absolute
+            inset-0
 
-                bg-gradient-to-t
+            bg-gradient-to-t
 
-                from-[#111111]
+            from-[#111111]
 
-                via-[#111111]/10
+            via-[#111111]/10
 
-                to-black/10
+            to-black/10
 
-                opacity-90
-              "
-            />
+            opacity-90
+          "
+        />
 
-            {/* Hover red tint */}
+        {/* Dark red hover tint */}
 
-            <div
-              className="
-                absolute
-                inset-0
+        <div
+          className="
+            absolute
+            inset-0
 
-                bg-red-600/0
+            bg-red-600/0
 
-                group-hover:bg-red-600/[0.06]
+            group-hover:bg-red-600/[0.06]
 
-                transition-colors
-                duration-700
-              "
-            />
-          </>
-        ) : (
-          /* ==================================================
-             EMPTY IMAGE STATE
-          ================================================== */
-
-          <div
-            className="
-              absolute
-              inset-0
-
-              flex
-              flex-col
-
-              items-center
-              justify-center
-
-              bg-[#151515]
-            "
-          >
-            <div
-              className="
-                text-[80px]
-
-                font-black
-
-                tracking-[-0.08em]
-
-                text-white/[0.035]
-              "
-            >
-              {project.episode}
-            </div>
-
-            <span
-              className="
-                mt-2
-
-                text-[9px]
-
-                font-mono
-
-                uppercase
-
-                tracking-[0.25em]
-
-                text-white/20
-              "
-            >
-              Project Preview
-            </span>
-          </div>
-        )}
+            transition-colors
+            duration-700
+          "
+        />
 
         {/* ==================================================
             TOP NUMBER
@@ -790,7 +793,7 @@ const ProjectCard = ({
               py-1.5
             "
           >
-            {project.episode.padStart(2, "0")}
+            {work.number}
           </span>
 
           <span
@@ -806,12 +809,12 @@ const ProjectCard = ({
               text-white/50
             "
           >
-            Case Study
+            Visual Story
           </span>
         </div>
 
         {/* ==================================================
-            MATCH SCORE
+            CATEGORY
         ================================================== */}
 
         <div
@@ -820,42 +823,39 @@ const ProjectCard = ({
 
             top-5
             right-5
-
-            flex
-            items-center
-            gap-2
           "
         >
           <span
             className="
-              w-1.5
-              h-1.5
-
-              rounded-full
-
-              bg-red-600
-
-              shadow-[0_0_12px_rgba(229,9,20,0.8)]
-            "
-          />
-
-          <span
-            className="
-              text-[10px]
+              text-[8px]
 
               font-mono
 
-              font-bold
+              uppercase
 
-              text-white/80
+              tracking-[0.15em]
+
+              text-white/90
+
+              bg-black/60
+
+              backdrop-blur-md
+
+              border
+              border-white/10
+
+              rounded-full
+
+              px-3
+              py-1.5
             "
           >
-            {project.match}
+            {work.category}
           </span>
         </div>
 
         {/* ==================================================
-            IMAGE BOTTOM CATEGORY
+            IMAGE BOTTOM
         ================================================== */}
 
         <div
@@ -886,13 +886,17 @@ const ProjectCard = ({
               text-white/55
             "
           >
-            {project.category}
+            {work.subtitle}
           </span>
+
+          {/* Arrow */}
 
           <div
             className="
               w-9
               h-9
+
+              shrink-0
 
               rounded-full
 
@@ -983,7 +987,7 @@ const ProjectCard = ({
             duration-300
           "
         >
-          {project.title}
+          {work.title}
         </h3>
 
         {/* ==================================================
@@ -1006,7 +1010,7 @@ const ProjectCard = ({
             line-clamp-3
           "
         >
-          {project.description}
+          {work.description}
         </p>
 
         {/* ==================================================
@@ -1023,7 +1027,7 @@ const ProjectCard = ({
             gap-1.5
           "
         >
-          {project.tags.map((tag) => (
+          {work.tags.map((tag) => (
             <span
               key={tag}
               className="
@@ -1086,7 +1090,7 @@ const ProjectCard = ({
               text-white/20
             "
           >
-            Digital Portfolio
+            Creative Portfolio
           </span>
 
           <span
@@ -1104,7 +1108,7 @@ const ProjectCard = ({
               transition-opacity
             "
           >
-            VIEW PROJECT ↗
+            EXPLORE ↗
           </span>
         </div>
       </div>
@@ -1112,4 +1116,4 @@ const ProjectCard = ({
   );
 };
 
-export default Projects;
+export default DesignWorks;

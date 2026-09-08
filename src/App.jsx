@@ -8,6 +8,7 @@ import Skills from './components/Skills';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import DesignWorkss from './components/designworks';
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -26,6 +27,7 @@ function App() {
       <Expertise />
       <Skills />
       <Projects />
+      <DesignWorkss />
       <Contact />
       <Footer />
     </main>
