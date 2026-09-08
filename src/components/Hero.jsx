@@ -603,7 +603,12 @@ const Hero = () => {
           >
             Projects & Experience
           </a>
-
+        <a
+            href="#design-works"
+            className="hover:text-red-500 transition-colors"
+          >
+            Design Works
+          </a>
           <a
             href="#contact"
             className="hover:text-red-500 transition-colors"
