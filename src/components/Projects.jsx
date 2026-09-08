@@ -2,12 +2,11 @@ import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-import picture from "../assets/Portfolio/picture.png";
 import kashmirBox from "../assets/Portfolio/kashmirBox.jpeg";
 import gauiLifestyle from "../assets/Portfolio/Gausilifestyle.jpeg";
 import milltex from "../assets/Portfolio/Milltex.jpeg";
 import narayana from "../assets/Portfolio/narayana.png";
-import birdeye from "../assets/Portfolio/birdeye.jpeg";
+import birdeye from "../assets/Portfolio/Birdeye.jpeg";
 import isano from "../assets/Portfolio/Isano.jpeg";
 import nlearn from "../assets/Portfolio/nlearn.png";
 import juspay from "../assets/Portfolio/juspay.png";
