@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-import kashmirBox from "../assets/Portfolio/kashmirBox.jpeg";
+import kashmirBox from "../assets/Portfolio/Kashmirbox.jpeg";
 import gauiLifestyle from "../assets/Portfolio/Gausilifestyle.jpeg";
 import milltex from "../assets/Portfolio/Milltex.jpeg";
 import narayana from "../assets/Portfolio/narayana.png";
