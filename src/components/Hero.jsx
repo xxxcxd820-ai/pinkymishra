@@ -584,7 +584,7 @@ const Hero = () => {
           </a>
 
           <a
-            href="#expertise"
+            href="#case-studies"
             className="hover:text-red-500 transition-colors"
           >
             Expertise
