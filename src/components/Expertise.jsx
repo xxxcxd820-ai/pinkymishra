@@ -236,7 +236,7 @@ const Expertise = () => {
               <br />
 
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-rose-600 to-red-700 drop-shadow-[0_0_25px_rgba(229,9,20,0.35)]">
-                Case Studies.
+                E-COMMERCE RESULTS.
               </span>
 
             </h2>
