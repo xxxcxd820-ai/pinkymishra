@@ -609,12 +609,7 @@ const Hero = () => {
           >
             Design Works
           </a>
-          <a
-            href="#contact"
-            className="hover:text-red-500 transition-colors"
-          >
-            Contact
-          </a>
+          
         </nav>
 
         {/* Contact Button */}
